@@ -1,19 +1,49 @@
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-        <mat-toolbar>Menu</mat-toolbar>
-        <mat-nav-list>
-            <a mat-list-item href="#">Link 1</a>
-            <a mat-list-item href="#">Link 2</a>
-            <a mat-list-item href="#">Link 3</a>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <mat-toolbar color="primary">
-            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-            <span class="text-center">Angular-transport</span>
-        </mat-toolbar>
-        <!-- Add Content Here -->
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<nav class="navbar navbar-expand-md navbar-light bg-light border p-3">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src=" https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png" class="fas fa-anchor text-warning fa-2x" width="80" height="80" class="d-inline-block align-top m-3 border-rounded"
+                alt="angular">
+        </a>
+    </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse col-md-9" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto p-3">
+
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['home']">
+                    <button type="button" class="btn btn-outline-primary">Accueil</button>
+                </a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['réservations']">
+                    <button type="button" class="btn btn-outline-primary">Vos réservations</button>
+                </a>
+            </li>
+
+
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['annonces']">
+                    <button type="button" class="btn btn-outline-primary">Vos annonces</button>
+                </a>
+            </li>
+
+
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['statistiques']">
+                    <button type="button" class="btn btn-outline-primary">Statistiques</button>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-3">
+        <div class="row">
+
+            <a type="button" class="nav-link">Se déconnecter</a>
+        </div>
+    </div>
+</nav>
